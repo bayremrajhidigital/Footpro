@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Académie FootPro | Officiel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        :root { --main-blue: #0033ff; --main-red: #ff0033; }
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: white; }
+        h1, h2, .sport-font { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+        
+        .hero-video-bg {
+            position: relative;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), #0a0a0a), url('foot.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: var(--main-blue);
+            transform: scale(1.02);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #888888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-sport {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .btn-sport::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-sport:hover::after { left: 100%; }
+
+        .image-container { overflow: hidden; border-radius: 1rem; }
+        .image-container img { transition: transform 0.6s ease; }
+        .image-container:hover img { transform: scale(1.1) rotate(2deg); }
+
+        @keyframes scroll-down {
+            0% { transform: translateY(0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(10px); opacity: 0; }
+        }
+        .mouse-scroll {
+            width: 25px; height: 40px;
+            border: 2px solid white; border-radius: 20px;
+            position: relative;
+        }
+        .mouse-scroll::before {
+            content: ''; width: 4px; height: 8px; background: white;
+            position: absolute; left: 50%; transform: translateX(-50%);
+            top: 8px; border-radius: 2px; animation: scroll-down 2s infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center bg-black/50 backdrop-blur-lg border-b border-white/5">
+        <img src="aca.png" alt="Logo" class="h-10 md:h-12 object-contain">
+        <div class="hidden md:flex space-x-10 text-sm font-bold uppercase tracking-widest">
+            <a href="#home" class="hover:text-blue-500 transition">Accueil</a>
+            <a href="#coaches" class="hover:text-blue-500 transition">Coachs</a>
+            <a href="#schedule" class="hover:text-blue-500 transition">Planning</a>
+            <a href="#contact" class="hover:text-blue-500 transition">Contact</a>
+        </div>
+        <div class="flex space-x-4">
+            <a href="https://www.facebook.com/share/17VgiX3iev/" target="_blank" class="hover:opacity-70 transition">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="h-6 invert" alt="FB">
+            </a>
+            <a href="https://www.instagram.com/academie_foot_pro?igsh=MXhhcWVzenZodnh3ZQ==" target="_blank" class="hover:opacity-70 transition">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="h-6 invert" alt="IG">
+            </a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-video-bg h-screen flex flex-col items-center justify-center text-center px-6">
+        <div class="animate__animated animate__fadeInUp">
+            <h1 class="text-6xl md:text-9xl font-black mb-4 italic tracking-tighter">BE THE <span class="text-blue-600">NEXT</span> PRO</h1>
+            <p class="text-xl md:text-2xl font-light max-w-2xl mx-auto text-gray-300 mb-10">L'excellence commence ici. Académie FootPro Kairouan, le terrain des futurs champions.</p>
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <a href="#schedule" class="btn-sport bg-blue-600 text-white px-12 py-4 font-black rounded-sm skew-x-[-10deg] hover:bg-blue-700 transition">PLANNING </a>
+                <a href="#contact" class="btn-sport border-2 border-white text-white px-12 py-4 font-black rounded-sm skew-x-[-10deg] hover:bg-white hover:text-black transition">LOCALISATION</a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+            <span class="text-[10px] uppercase tracking-widest font-bold">Scroll</span>
+            <div class="mouse-scroll"></div>
+        </div>
+    </section>
+
+    <section id="coaches" class="py-32 px-6">
+        <div class="container mx-auto">
+            <div class="mb-20">
+                <h2 class="text-5xl md:text-7xl font-black italic">Staff Technique</h2>
+                <div class="h-2 w-32 bg-blue-600 mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-4 rounded-2xl group">
+                    <div class="image-container aspect-square mb-6">
+                        <img src="coach1.jpg" alt="Haroun" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-3xl font-black italic uppercase">Haroun Rommen</h3>
+                    <p class="text-blue-500 font-bold tracking-widest text-sm">HEAD COACH</p>
+                </div>
+                <div class="glass-card p-4 rounded-2xl group border-b-4 border-b-red-600">
+                    <div class="image-container aspect-square mb-6">
+                        <img src="coach2.jpg" alt="Haithem" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-3xl font-black italic uppercase">Haithem Hlali</h3>
+                    <p class="text-red-500 font-bold tracking-widest text-sm">Head Coach</p>
+                </div>
+                <div class="glass-card p-4 rounded-2xl group">
+                    <div class="image-container aspect-square mb-6">
+                        <img src="coach3.jpg" alt="Yassin" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-3xl font-black italic uppercase text-white">Yassin Dahleb</h3>
+                    <p class="text-blue-500 font-bold tracking-widest text-sm">Head Coach</p>
+                        
+                        
+                    
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="py-32 bg-[#0d0d0d] relative overflow-hidden">
+        <div class="absolute top-0 right-0 opacity-5 text-[15rem] font-black italic select-none">PLANNING</div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-5xl font-black mb-16 italic text-center">Horaires des Entraînements</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div class="bg-gradient-to-br from-red-950/20 to-transparent p-10 border border-red-900/30 rounded-3xl">
+                    <h3 class="text-4xl font-black text-red-500 mb-8 italic">COACH HAITHEM</h3>
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-center p-4 bg-white/5 rounded-xl">
+                            <span class="font-bold">Vendredi</span>
+                            <span class="text-2xl font-black text-red-500">17:00</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-white/5 rounded-xl">
+                            <span class="font-bold">Samedi</span>
+                            <span class="text-2xl font-black text-red-500">18:30</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-white/5 rounded-xl">
+                            <span class="font-bold">Dimanche</span>
+                            <span class="text-2xl font-black text-red-500">14:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-950/20 to-transparent p-10 border border-blue-900/30 rounded-3xl">
+                    <h3 class="text-4xl font-black text-blue-500 mb-8 italic">COACH HAROUN</h3>
+                    <div class="grid gap-4">
+                        <div class="p-4 bg-white/5 rounded-xl">
+                            <p class="text-blue-400 font-bold mb-2">VENDREDI</p>
+                            <div class="flex justify-between">
+                                <span>G1: 18:30</span><span>G2: 19:45</span>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-xl">
+                            <p class="text-blue-400 font-bold mb-2">SAMEDI</p>
+                            <div class="flex justify-between">
+                                <span>G1: 16:00</span><span>G2: 17:15</span>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-xl">
+                            <p class="text-blue-400 font-bold mb-2">DIMANCHE</p>
+                            <div class="flex justify-between">
+                                <span>G1: 15:30</span><span>G2: 17:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center mt-16 text-gray-500 font-bold tracking-widest animate-pulse">⚠️ NE MANQUEZ PAS VOS SÉANCES | BON COURAGE</p>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 px-6">
+        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+            <div class="flex flex-col justify-center">
+                <h2 class="text-6xl font-black italic mb-8">Nous <span class="text-blue-600">Trouver</span></h2>
+                <div class="space-y-8 mb-12">
+                    <div>
+                        <p class="text-xs font-bold text-gray-500 tracking-widest uppercase mb-2">Localisation</p>
+                        <p class="text-2xl font-bold">Kairouan, Centre Ville</p>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold text-gray-500 tracking-widest uppercase mb-2">Infoline 24/7</p>
+                        <p class="text-4xl font-black text-blue-500 tracking-tighter italic">+216   95 207 800</p>
+                    </div
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://www.google.com/maps/search/?api=1&query=35.677811,10.107236" target="_blank" class="bg-white text-black px-8 py-3 font-bold rounded-sm skew-x-[-10deg] hover:bg-blue-600 hover:text-white transition">GOOGLE MAPS</a>
+                </div>
+            </div>
+            <div class="h-[450px] bg-white/5 rounded-3xl overflow-hidden border border-white/10 grayscale hover:grayscale-0 transition duration-1000">
+                <iframe width="100%" height="100%" style="border:0;" src="https://maps.google.com/maps?q=35.677811,10.107236&z=15&output=embed"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 border-t border-white/5 text-center">
+        <img src="aca.png" class="h-16 mx-auto mb-10 opacity-50 hover:opacity-100 transition">
+        <p class="text-gray-600 text-xs tracking-widest uppercase font-bold">© 2026 ACADÉMIE FOOTPRO KAIROUAN | TOUS DROITS RÉSERVÉS</p>
+    </footer>
+
+</body>
+</html>
